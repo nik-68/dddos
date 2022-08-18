@@ -147,34 +147,35 @@ def RandomAttack(url,ra,date):
 			gc.collect()
 if __name__ == '__main__':
 	try:
-		target = str(input('Target URL Input : '))
-		text = int(input('URL Scan(0),URL Attack(1) : '))
+		print()
+                target = str(input(' Target URL Input : => '))
+		text = int(input(' URL Scan(0),URL Attack(1) : => '))
 		if text == 0 :
-			text_a = int(input('FullScan(0),ListScan(1),ChooseScan(2) : '))
+			text_a = int(input(' FullScan(0),ListScan(1),ChooseScan(2) : => '))
 			if text_a == 0:
 				Scanfull(target)
 			if text_a == 1 :
 				Scanlist(target)
 			if text_a == 2 :
-				port1 = int(input('Port Beginning Input : '))
-				port2 = int(input('Port End Input : '))
+				port1 = int(input(' Port Beginning Input : => '))
+				port2 = int(input(' Port End Input : => '))
 				Sacnchoose(target,port1,port2)
 			else:
 				pass
 		elif text == 1 :
-			text_b = int(input('SingleAttack(0),RandomAttack(1) : '))
+			text_b = int(input('SingleAttack(0),RandomAttack(1) : => '))
 			if text_b == 0 :
-				port = int(input('Target Port Input : '))
-				ra = int(input('Range Input : '))
-				tha = int(input('Threads Input : '))
-				date = int(input('Send Date(Bit) Input (1 ~ 1024) : '))
+				port = int(input(' Target Port Input : => '))
+				ra = int(input(' Range Input : => '))
+				tha = int(input(' Threads Input : => '))
+				date = int(input(' Send Date(Bit) Input (1 ~ 1024) : => '))
 				for i in range(tha):#Threads Input
 					th = threading.Thread(target=SingleAttack,args=(target,port,ra,date,))
 					th.start()
 			if text_b == 1 :
-				ra = int(input('Range Input : '))
-				tha = int(input('Threads Input : '))
-				date = int(input('Send Date(Bit) Input (1 ~ 1024) : '))
+				ra = int(input(' Range Input : => '))
+				tha = int(input(' Threads Input : => '))
+				date = int(input(' Send Date(Bit) Input (1 ~ 1024) : => '))
 				for i in range(tha):#Threads Input
 					th = threading.Thread(target=RandomAttack,args=(target,ra,date,))
 					th.start()
