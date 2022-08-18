@@ -147,7 +147,6 @@ def RandomAttack(url,ra,date):
 			gc.collect()
 if __name__ == '__main__':
 	try:
-		print()
                 target = str(input(' Target URL Input : => '))
 		text = int(input(' URL Scan(0),URL Attack(1) : => '))
 		if text == 0 :
